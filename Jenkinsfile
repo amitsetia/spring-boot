@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Package') {
      steps {
-           sh "docker build -t springtest/:${shortcommit} ."
+           sh "docker build -t springtest/decpip:${shortcommit} ."
            }  
     }
 }
