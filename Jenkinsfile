@@ -1,12 +1,10 @@
 pipline {
   agent any
-  options timestamps()
-  triggers {
-          pollSCM('* * * * *')
   }
   stages{
-    stage{'poll'} {
+    stage{'build'} {
       steps {
+            mvn clean install
           
      }
   }
