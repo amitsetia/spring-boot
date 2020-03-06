@@ -1,6 +1,8 @@
 pipeline {
   agent any
- 
+  environment {
+    shortcommit = sh "git rev-parse --short HEAD"
+  } 
   stages{
     stage('build') {
       steps {
@@ -9,7 +11,7 @@ pipeline {
     }
     stage('Package') {
      steps {
-           sh "docker build -t springtest:${BUILD_TIMESTAMP} ."
+           sh "docker build -t springtest/:${shortcommit} ."
            }  
     }
 }
