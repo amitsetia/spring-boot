@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Package') {
      steps {
-          sh 'docker build -t shunya/spring-dec:${env.shortcommit} .'
+          sh (script: 'docker build -t shunya/spring-dec:${env.shortcommit} .')
       }
     }
   }
