@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Publish'){
       steps{
-        withDockerRegistry(credentialsId: 'Docker', url: 'https://hub.docker.com/') {
+        withDockerRegistry(credentialsId: 'Docker', url: 'https://id.docker.com') {
           sh 'docker push setiaamit/shunya:${env.shortcommit}'
         }
       }
