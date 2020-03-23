@@ -11,7 +11,10 @@ pipeline {
     }
     stage('Package') {
      steps {
-          sh 'docker build -t shunya:$(env.shortcommit) .'
+        script {
+          def commitid = ${env.shortcommit}
+          sh 'docker build -t shunya:${commitid} .'
+        }
       }
     }
   }
