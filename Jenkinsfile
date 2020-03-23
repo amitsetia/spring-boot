@@ -10,7 +10,6 @@ pipeline {
         }
     }
     stage('Package') {
-     agent any
      steps {
           sh 'docker build -t shunya/spring-dec:${env.shortcommit} .'
     }
