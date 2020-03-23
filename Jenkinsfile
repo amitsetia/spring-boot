@@ -11,9 +11,7 @@ pipeline {
     }
     stage('Package') {
      steps {
-        script {
-          sh 'docker build -t setiaamit/shunya:${env.shortcommit} .'
-        }
+          sh "docker build -t setiaamit/shunya:${env.shortcommit} ."
       }
     }
   }
