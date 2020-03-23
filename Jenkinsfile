@@ -13,12 +13,6 @@ pipeline {
      agent any
      steps {
           sh 'docker build -t shunya/spring-dec:${env.shortcommit} .'
-            //echo 'Starting to build docker image'
-            //script {
-            //def dockerfile = 'Dockerfile'
-            //def image = docker.build("springdec:${env.shortcommit} ")
-            //} 
-           }  
     }
 }
 }
