@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    shortcommit= sh (script: 'git rev-parse --short HEAD', returnStdout: true)
+    shortcommit= sh (script: 'git rev-parse --short HEAD', returnStdout: true).trim()
   } 
   stages{
     stage('Build') {
