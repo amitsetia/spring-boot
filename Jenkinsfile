@@ -11,7 +11,10 @@ pipeline {
     }
     stage('Package') {
      steps {
-           sh "docker build -t springtest/decpip:${env.shortcommit} . "
+           echo 'Starting to build docker image'
+           script {
+            def image = docker.build(springdec:${env.shortcommit})
+           } 
            }  
     }
 }
