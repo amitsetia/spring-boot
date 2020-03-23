@@ -6,13 +6,13 @@ pipeline {
   stages{
     stage('build') {
       steps {
-           sh 'mvn package'
-        }
+          sh 'mvn package'
+      }
     }
     stage('Package') {
      steps {
           sh 'docker build -t shunya/spring-dec:${env.shortcommit} .'
+      }
     }
   }
-}
 }
