@@ -14,5 +14,6 @@ pipeline {
      steps {
           sh 'docker build -t shunya/spring-dec:${env.shortcommit} .'
     }
+  }
 }
 }
