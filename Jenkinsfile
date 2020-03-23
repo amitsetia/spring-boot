@@ -13,7 +13,7 @@ pipeline {
      steps {
            echo 'Starting to build docker image'
            script {
-            def image = docker.build(springdec:${env.shortcommit})
+            def image = docker.build("springdec:${env.shortcommit}")
            } 
            }  
     }
