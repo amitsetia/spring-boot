@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Package') {
      steps {
-          sh 'docker build -t shunya:latest .'
+          sh 'docker build -t shunya:$(env.shortcommit) .'
       }
     }
   }
