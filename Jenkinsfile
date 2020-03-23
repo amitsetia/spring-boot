@@ -4,14 +4,14 @@ pipeline {
     shortcommit= sh (script: 'git rev-parse --short HEAD', returnStdout: true)
   } 
   stages{
-    stage('build') {
+    stage('Build') {
       steps {
           sh 'mvn package'
       }
     }
     stage('Package') {
      steps {
-          sh (script: 'docker build -t shunya/spring-dec:${env.shortcommit} .')
+          sh "docker build -t shunya/springdec:${env.shortcommit} ."
       }
     }
   }
