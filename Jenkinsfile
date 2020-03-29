@@ -11,13 +11,13 @@ pipeline {
     }
     stage('Package') {
       steps {
-          sh "docker build -t setiaamit/shunya:${env.shortcommit} ."
+          sh "sudo docker build -t setiaamit/shunya:${env.shortcommit} ."
       }
     }
     stage('Publish'){
       steps{
         withDockerRegistry(credentialsId: 'Docker', url: '') {
-          sh "docker push setiaamit/shunya:${env.shortcommit}"
+          sh "sudo docker push setiaamit/shunya:${env.shortcommit}"
         }
       }
     }
